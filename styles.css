@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -13,36 +15,64 @@ img {
   max-width: 100%;
 }
 
+/* Cambio el ancho al 60% */
 .layout {
-  width: 90%;
+  width: 60%; 
   margin: 0 auto;
 }
 
 /* HERO */
+/* Añado el grandiente como imagen de fondo */
 .hero {
+  background-image: linear-gradient(135deg, #6b46c1, #ed4899 65%, #3b82f6);
   background-color: #ec4899;
   color: white;
   text-align: center;
   padding: 30px 20px;
-
 }
 
+/* Convierto el h1 (bloque) en inline-block */
+/* -> ajusta la anchura del pseudo elemento ::after */
+/* Añado animación */
 .hero__title {
   font-size: 64px;
   margin: 0 0 10px;
-
+  display: inline-block;
+  animation: entradaHero 2s linear;
 }
 
+/* Añado pseudo elemento */
+/* -> lo convierto en bloque para que salte a la siguiente línea */
+.hero__title::after {
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 4px;
+  display: block; 
+}
 
+/* Añado animación */
+/* -> 1s de retraso respecto al título */
 .hero__subtitle {
   font-size: 20px;
   margin-bottom: 20px;
-  
+  animation: entradaHero 2s linear;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;  
 }
 
 .btn {
   text-decoration: none;
   display: inline-block;
+}
+
+/* Estados interactivos para los botones */
+.btn:hover {
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(4px);
 }
 
 .btn--primary {
@@ -60,20 +90,40 @@ img {
 }
 
 /* NAV */
+/* Añado flex y justifico */
 .nav {
+  display: flex; 
+  justify-content: center;
   background: #1f2937;
-  padding: 16px;
+  padding: 16px; 
+  margin-top: 12px;
 }
 
+/* Hago el margen derecho proporcional */
 .nav a {
   color: white;
   text-decoration: none;
-  margin-right: 40px;
+  margin-right: 3%;
   font-weight: bold;
 }
 
+/* Añado borde y separación entre elementos */
+/* -> selector avanzado de elementos contiguos */
+ .nav a + a {
+  border-left: 2px solid #4c5465; 
+  padding-left: 3%;
+}
+
+/* Efecto brillo para los enlaces */
+.nav a:hover {
+  text-shadow: 0 0 20px #77d4eb, 0 0 20px #77d4eb;
+}
+
 /* PRESENTACIÓN */
+/* Añado flex y espacio entre elementos */
 .presentacion {
+  display: flex;
+  gap: 10%;
   padding: 32px 20px;
   background: white;
   margin-top: 24px;
@@ -83,23 +133,37 @@ img {
   width: 55%;
 }
 
+/* Elimino el tamaño de fuente */
+/* -> se iguala con el resto de encabezados h2 */
+/* Añado borde inferior */
 .presentacion__texto h2 {
-  font-size: 46px;
   margin-top: 0;
+  border-bottom: 2px solid #dddddd;
+  display: inline-block; /* Ajusta la anchura de la línea */
+  padding-bottom: 15px;
+  margin-bottom: 0;
 }
 
+/* Fijo la posición del contenedor */
 .presentacion__media {
-  width: 260px;
-  height: 260px;
+  position: relative;
+  width: 200px;
+  height: 200px;
 }
 
+/* Redondeo bordes */
 .presentacion__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
 }
 
+/* Posiciono la etiqueta respecto al contenedor padre */
 .live-badge {
+  position: absolute;
+  top: 60%;
+  right: -10%;
   background: #ef4444;
   color: white;
   padding: 12px 18px;
@@ -118,6 +182,13 @@ img {
   text-align: center;
 }
 
+/* Añado flexbox y justifico */
+.zonas__flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Aumeneto el ancho */
 .zona {
   background: #3b82f6;
   color: white;
@@ -125,13 +196,12 @@ img {
   margin-bottom: 16px;
   text-align: center;
   display: inline-block;
-  width: 30%;
+  width: 32%;
 }
 
 .zona--destacada {
   background: #ec4899;
 }
-
 
 /* AGENDA */
 .agenda {
@@ -144,8 +214,11 @@ img {
   text-align: center;
 }
 
+/* Añado grid */
 .agenda__grid {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2%;
 }
 
 .agenda__item {
@@ -154,6 +227,25 @@ img {
   padding: 22px;
   margin-bottom: 12px;
   text-align: center;
+}
+
+/* Añado borde inferior a los encabezados h3 */
+.agenda__item h3 {
+  border-bottom: 2px solid #aaa1cb;
+  padding-bottom: 10px;
+}
+
+/* Modifico el color del borde en los diferentes hijos */
+.agenda__item:first-child h3 {
+  border-color: #cc8b12;
+}
+
+.agenda__item:nth-child(2) h3 {
+  border-color: #cc8b12;
+}
+
+.agenda__item:last-child h3 {
+  border-color: #77d4eb;
 }
 
 .agenda__item:first-child {
@@ -179,8 +271,11 @@ img {
   text-align: center;
 }
 
+/* Añado flex y justifico, con espacio entre elementos */
 .ponentes__lista {
-  display: block;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
 }
 
 .ponente {
@@ -191,10 +286,19 @@ img {
   background: #fafafa;
 }
 
+/* Redondeo y ajusto la imagen */
 .ponente img {
   width: 140px;
   height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
+/* Añado línea de separación */
+.ponente h3 {
+  border-top: 2px solid #dddddd;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
 /* FOOTER */
@@ -218,7 +322,35 @@ img {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .layout {
+    width: 90%;
+  }
+  
   .hero__title {
     font-size: 44px;
   }
+
+  .nav {
+    justify-content: space-evenly;
+  }
+  .nav a + a {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .zonas__flex {
+    flex-flow: wrap;
+  }
+
+  .zona {
+    width: 100%;
+  }
+
+  .agenda__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+
 }
+
