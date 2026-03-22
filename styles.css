@@ -36,7 +36,7 @@ img {
 /* -> ajusta la anchura del pseudo elemento ::after */
 /* Añado animación */
 .hero__title {
-  font-size: 64px;
+  font-size: 4rem;
   margin: 0 0 10px;
   display: inline-block;
   animation: entradaHero 2s linear;
@@ -55,7 +55,7 @@ img {
 /* Añado animación */
 /* -> 1s de retraso respecto al título */
 .hero__subtitle {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-bottom: 20px;
   animation: entradaHero 2s linear;
   animation-delay: 0.5s;
@@ -129,13 +129,17 @@ img {
   gap: 10%;
   padding: 10px 20px;
   background: #fefefe;
-  margin-top: 24px;
+  margin-top: 12px;
   border: 2px solid #dddddd;
-
 }
 
 .presentacion__texto {
   width: 55%;
+}
+
+/* Aumento el tamaño del párrafo */
+.presentacion__texto p {
+  font-size: 1.2rem;
 }
 
 /* Elimino el tamaño de fuente */
@@ -220,10 +224,9 @@ img {
 }
 
 /* AGENDA */
-.agenda {
-  margin-top: 24px;
-  background: white;
-  padding: 24px 20px;
+/* Aumento el tamaño de los encabezados h3 de la sección */
+#agenda h3 {
+  font-size: 1.8rem;
 }
 
 /* Añado grid */
@@ -274,9 +277,9 @@ img {
 }
 
 /* PONENTES */
-.ponentes {
-  margin-top: 24px;
-  padding: 24px 20px;
+/* Aumento el tamaño de los encabezados h3 de la sección */
+#ponentes h3 {
+  font-size: 1.4rem;
 }
 
 /* Añado flex y justifico, con espacio entre elementos */
@@ -290,7 +293,7 @@ img {
 .ponente {
   border: 1px solid #d1d5db;
   padding: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
   text-align: center;
   background: #fefefe;
   width: 300px
@@ -318,7 +321,8 @@ img {
 }
 
 #footer p {
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
 }
 
 /* ANIMACIÓN */
@@ -332,29 +336,70 @@ img {
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
+/* Adaptación para móviles */
+@media (max-width: 575px) {
+  html {
+    font-size: 12px;
+  }
+
   .layout {
     width: 90%;
   }
-  
-  .hero__title {
-    font-size: 44px;
+
+  .hero {
+    padding: 15px;
   }
 
+  .hero__title {
+    font-size: 2.2rem;
+  }
+
+  .hero__title::after {
+    display: none;
+  }
+
+  .hero__subtitle {
+    font-size: 0.9rem; /*1.1*/
+  }
+
+  .btn--primary {
+    display: none;
+  }
+  
   .nav {
     justify-content: space-evenly;
+    font-size: 1.2rem;
   }
+
   .nav a + a {
     border-left: none;
     padding-left: 0;
   }
 
+  .presentacion {
+    margin-bottom: 5px;
+  }
+  .presentacion__media {
+    width: 120px;
+    height: 120px;
+  }
+
+  .live-badge {
+    padding: 6px 9px;
+  }
+
+  .seccion {
+    padding: 10px 0 0 0;
+  }
   .zonas__flex {
     flex-flow: wrap;
+    gap: 0;
   }
 
   .zona {
     width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
   }
 
   .agenda__grid {
@@ -362,6 +407,48 @@ img {
     grid-template-rows: 1fr 1fr;
   }
 
+  .agenda__item {
+    padding: 10px 22px;
+    margin-bottom: 5px;
+  }
 
+  .ponente {
+    padding: 10px;
+  }
+
+  .ponente p {
+    margin-top: 5px;
+  }
+
+  .ponente img {
+    width: 84px;
+    height: 84px;
+  }
 }
+
+/* Dispositivos medianos */
+@media (min-width: 576px) and (max-width: 900px) {
+  html { 
+    font-size: 14px;
+  }
+
+  .layout {
+    width: 90%;
+  }   
+
+  .presentacion__media {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Pantallas de escritorio pequeñas */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .layout {
+    width: 70%;
+  }     
+}
+
+
+
 
