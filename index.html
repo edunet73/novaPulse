@@ -39,7 +39,11 @@
         </div>
       </section>
 
-      <section id="zonas" class="zonas">
+      <!--Todas las secciones tienen un identificacor único.
+          No es necesario que tengan también un atributo de clase única.
+          Unifico el atributo class para poder manejar el estilo común
+          de todas las secciones (salvo la de presentación)-->
+      <section id="zonas" class="seccion">
         <h2>Nuestras zonas</h2>
 
         <!--Añado un envoltorio para las tres zonas-->
@@ -58,7 +62,7 @@
         </div>
       </section>
 
-      <section id="agenda" class="agenda">
+      <section id="agenda" class="seccion">
         <h2>Agenda</h2>
 
         <div class="agenda__grid">
@@ -84,7 +88,7 @@
         </div>
       </section>
 
-      <section id="ponentes" class="ponentes">
+      <section id="ponentes" class="seccion">
         <h2>Nuestros ponentes</h2>
 
         <div class="ponentes__lista">
@@ -104,7 +108,8 @@
 
     </main>
 
-    <footer id="entradas" class="footer">
+    <!--Modifico el identificador y la clase-->
+    <footer id="footer" class="seccion">
       <h2>Entradas Disponibles</h2>
       <p>Reserva tu lugar ahora</p>
       <a href="#" class="btn btn--secondary">Comprar</a>

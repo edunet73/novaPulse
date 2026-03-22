@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #ececec;
+  background: #fefefe;
   color: #1f2937;
 }
 
@@ -16,9 +16,10 @@ img {
 }
 
 /* Cambio el ancho al 60% */
+/* Añado margen superior e inferior */
 .layout {
   width: 60%; 
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 /* HERO */
@@ -121,12 +122,16 @@ img {
 
 /* PRESENTACIÓN */
 /* Añado flex y espacio entre elementos */
+/* Modifico relleno superior e inferior */
+/* Añado el borde */
 .presentacion {
   display: flex;
   gap: 10%;
-  padding: 32px 20px;
-  background: white;
+  padding: 10px 20px;
+  background: #fefefe;
   margin-top: 24px;
+  border: 2px solid #dddddd;
+
 }
 
 .presentacion__texto {
@@ -140,8 +145,8 @@ img {
   margin-top: 0;
   border-bottom: 2px solid #dddddd;
   display: inline-block; /* Ajusta la anchura de la línea */
-  padding-bottom: 15px;
-  margin-bottom: 0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* Fijo la posición del contenedor */
@@ -171,21 +176,32 @@ img {
   border-radius: 8px;
 }
 
-/* ZONAS */
-.zonas {
-  margin-top: 24px;
-  background: white;
-  padding: 24px 20px;
+/* SECCIONES */
+/* Elimino el margen superior */
+.seccion {
+  background: #fefefe;
+  padding-top: 24px;
 }
 
-.zonas h2 {
+/* Encabezados de sección (incluído el footer) */
+/* -> excepto presentación */
+.seccion h2 {
+  background-color: #e9d4ef;
+  padding: 8px 0;
+  margin-bottom: 15px;
   text-align: center;
 }
 
+.seccion p {
+  margin-top: 10px;
+}
+
+/* ZONAS */
 /* Añado flexbox y justifico */
 .zonas__flex {
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 /* Aumeneto el ancho */
@@ -210,15 +226,12 @@ img {
   padding: 24px 20px;
 }
 
-.agenda h2 {
-  text-align: center;
-}
-
 /* Añado grid */
 .agenda__grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2%;
+  padding: 0 20px;
 }
 
 .agenda__item {
@@ -263,27 +276,24 @@ img {
 /* PONENTES */
 .ponentes {
   margin-top: 24px;
-  background: white;
   padding: 24px 20px;
-}
-
-.ponentes h2 {
-  text-align: center;
 }
 
 /* Añado flex y justifico, con espacio entre elementos */
 .ponentes__lista {
   display: flex;
   justify-content: center;
-  gap: 5%;
+  gap: 3%;
 }
 
+/* Aumento el ancho */
 .ponente {
   border: 1px solid #d1d5db;
   padding: 20px;
   margin-bottom: 16px;
   text-align: center;
-  background: #fafafa;
+  background: #fefefe;
+  width: 300px
 }
 
 /* Redondeo y ajusto la imagen */
@@ -302,11 +312,13 @@ img {
 }
 
 /* FOOTER */
-.footer {
-  margin-top: 24px;
-  background: white;
+#footer {
   text-align: center;
-  padding: 24px 20px 40px;
+  padding-bottom: 20px;
+}
+
+#footer p {
+  margin-bottom: 10px;
 }
 
 /* ANIMACIÓN */
@@ -318,7 +330,6 @@ img {
     opacity: 1;
   }
 }
-
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
