@@ -123,13 +123,14 @@ img {
 /* PRESENTACIÓN */
 /* Añado flex y espacio entre elementos */
 /* Modifico relleno superior e inferior */
+/* Añado margen inferior */
 /* Añado el borde */
 .presentacion {
   display: flex;
   gap: 10%;
   padding: 10px 20px;
   background: #fefefe;
-  margin-top: 12px;
+  margin: 12px 0;
   border: 2px solid #dddddd;
 }
 
